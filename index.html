@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="reset.css">
-  <link rel="stylesheet" type="text/css" href="fonts.css">
-  <link rel="stylesheet" type="text/css" href="global.css">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>API</title>
+  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/cprg-218-lab-5.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Common Website Features</title>
 </head>
-
 <body>
-  <!-- Heading for the Page -->
-  <header class="header-container">
-    <h1>Lab 5</h1>
-    <h2>App displaying card content using API</h2>
-  </header>
+  <section id="home" class="hero-container">
+    <div class="hero-image">
+      <img src="assets/DSC02466.JPG" alt="blue and firework pattern nails">
+    </div>
+      <div class="hero-text">
+        <h1>I am Cara.</h1>
+        <p>Welcome to my studio.</p>
+      </div>
+  </section>
+  
+  <section id="content" class="content-container">
+    <div class="content-frame">
+      <div class="content-text">
+          <h2>Passion Makes Perfect</h2>
+          <p>I started Cara Nail-Art with the goal of offering readers a glimpse into my thoughts and experiences. What started out as weekly posts has evolved into a dynamic site packed with information about various topics that are near and dear to me. Take some time to explore the blog and see for yourself what makes you curious and eager. Read on and enjoy!</p>
+          <button>join us</button>
+      </div>
+      <div class="content-image">
+          <img src="assets/DSC02534.JPG" alt="snow and blue nails">
+      </div>
+   </div>
+  </section>
+
+  <section id="accordion" class="accordion-container">
+    <h1>About Us</h1>
+    <button class="accordion">Our Skilled Nail Technicians</button>
+    <div class="panel">
+      <p>At Cara Nail-Art, we take pride in having a team of skilled and professional nail technicians. Our nail artists not only possess extensive experience but also consistently stay abreast of the latest trends and innovative techniques in the nail industry. Whether you're seeking a classic style, following the latest fashion, or desiring a unique, personalized look, our nail technicians will tailor a design that suits you perfectly, making your hands radiate charm.</p>
+    </div>
+    <button class="accordion">Comfortable Nail Salon Environment</button>
+    <div class="panel">
+      <p>Cara Nail-Art is dedicated to providing customers with a comfortable and inviting nail care experience. Our nail salon is thoughtfully designed, featuring a spacious and well-lit environment, allowing you to enjoy our nail services in a relaxed atmosphere. We prioritize cleanliness and a tidy environment to ensure a reassuring and calming nail care experience.</p>
+    </div>
+    <button class="accordion">Our Core Values</button>
+    <div class="panel">
+      <p>Personal Expression and Creativity: We believe that nail art is a unique form of personal expression and a showcase of creativity. Each customer is one of a kind, and our designers use their skillful techniques to create distinctive nail art designs that let your personality shine at your fingertips.
+Professionalism and Care: Our team is grounded in professionalism, emphasizing meticulous service to convey genuine care for our customers. At Cara Nail-Art, you will experience high-quality nail services provided by professional technicians, allowing your fingertips to radiate vibrant brilliance.
+Relaxation and Enjoyment: Nail care at Cara Nail-Art is not just about external beauty but also about relaxation and enjoyment. We encourage customers to unwind during the nail care process, enjoying the serene pleasure of beauty in a relaxed and cozy ambiance.</p>
+    </div>
+  </section>
   <section class="option-1">
     <div class="option-container">
       <h2>Option 1</h2>
@@ -29,16 +64,40 @@
       <ul id="option-1-results" class="card-container"></ul>
     </div>
   </section>
-  <section class="option-2">
-    <div class="option-container">
-      <h2>Option 2</h2>
-      <p>Display a list of cards using the API</p>
-    </div>
-    <div class="container">
-      <ul id="option-2-results" class="card-container"></ul>
-    </div>
-  </section>
-  <script src="scripts.js" defer></script>
-</body>
+<section class="footer-container">
+    <div class="footer-content">
+      <div class="footer-text">
+        <p>Author: CaraWang</p>
+        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+      </div>
 
+      <div class="footer-link">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#content">Content</a></li>
+          <li><a href="#accordion">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h1>Cara Nail-Art</h1>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script></p>
+        
+      <div class="social-icons">
+        <a href="https://github.com/carawang2023" target="_blank">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCoTZ41kL8iRhCiBLhw-gGDw" target="_blank">
+          <i class="fab fa-youtube fa-2x"></i>
+        </a>
+      </div>
+      </div>
+      
+      <div class="shop-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1054.235968993282!2d-114.08842601907592!3d51.063984242221586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716f9268a69e81%3A0xb1db5e68bd61e28!2z5Y2X6Zi_5bCU5Lyv5aGU55CG5bel5a2m6Zmi!5e0!3m2!1szh-CN!2sca!4v1711137550032!5m2!1szh-CN!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+</section>
+<script src="scripts.js" defer></script>
+</body>
 </html>

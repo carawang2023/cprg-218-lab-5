@@ -1,0 +1,28 @@
+/*hero-container*/
+.hero-container{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*content-container*/
+.content-container, .content-frame{
+  background-color: antiquewhite;
+  margin: -1vw 0;
+  padding: 0;
+}
+
+/*accordion-container*/
+.accordion-container {
+  background-color: #f8f9fa;
+  margin: -3.5vw 0;
+  padding: 0 2vw 8vw 2vw;
+}
+
+/*footer-container*/
+.footer-container {
+  width: 100%;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
