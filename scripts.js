@@ -33,13 +33,6 @@ function createCardElement(item) {
 }
 
 /**
- * Create multiple cards from array of item data.
- */
-function createCardElements(data) {
-  return data.map(createCardElement).join("");
-}
-
-/**
  * Fetch list of pokemon names and urls.
  */
 async function fetch10PokemonList() {
@@ -115,33 +108,4 @@ async function renderOption1Dropdown() {
 
 renderOption1Dropdown();
 
-/**
- * Option 2
- */
-async function renderOption2() {
-  const myFavouritePokemon = ["pikachu", "charizard", "ditto", "psyduck", "wartortle", "clefable", "jigglypuff", "eevee"];
 
-  const fetchPokemonData = async (pokemon) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-    return await fetchPokemonDetails(url);
-  };
-
-  // Map the pokemon names to pokemon data.
-  const pokemonData = await Promise.all(
-    myFavouritePokemon.map(fetchPokemonData)
-  );
-
-  // Map the pokemon data to card data.
-  const cardData = pokemonData.map((itemData) => {
-    return {
-      title: itemData.name,
-      image: itemData.sprites.other["official-artwork"].front_default,
-      subtitle: itemData.types.map((type) => type.type.name).join(", "),
-    };
-  });
-
-  const cards = createCardElements(cardData);
-  document.getElementById("option-2-results").innerHTML = cards;
-}
-
-renderOption2();
