@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="styles/cprg-218-lab-5.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <title>Common Website Features</title>
+  <title>Cara Nail Art Studio</title>
 </head>
 <body>
   <section id="home" class="hero-container">
@@ -53,16 +53,11 @@ Professionalism and Care: Our team is grounded in professionalism, emphasizing m
 Relaxation and Enjoyment: Nail care at Cara Nail-Art is not just about external beauty but also about relaxation and enjoyment. We encourage customers to unwind during the nail care process, enjoying the serene pleasure of beauty in a relaxed and cozy ambiance.</p>
     </div>
   </section>
-  <section class="option-1">
-    <div class="option-container">
-      <h2>Option 1</h2>
-      <p>Use a dropdown to change the API endpoint or data</p>
-      <select id="dropdown" class="dropdown"></select>
-      <button id="submit-button" class="button">Submit</button>
-    </div>
-    <div class="container">
-      <ul id="option-1-results" class="card-container"></ul>
-    </div>
+  <section id="cards" class="cards-container">
+      <h1>Nail Art Collections</h1>
+      <input type="text" id="searchInput" placeholder="Search Collection...">
+      <button onclick="searchPhotos()">Search</button>
+      <div id="cardsContainer" class="cards-content"></div>
   </section>
 <section class="footer-container">
     <div class="footer-content">
@@ -74,7 +69,8 @@ Relaxation and Enjoyment: Nail care at Cara Nail-Art is not just about external 
       <div class="footer-link">
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#content">Content</a></li>
+          <li><a href="#content">Introduction</a></li>
+          <li><a href="#cards">Nail Art Collections</a></li>
           <li><a href="#accordion">About Us</a></li>
         </ul>
       </div>
@@ -94,7 +90,7 @@ Relaxation and Enjoyment: Nail care at Cara Nail-Art is not just about external 
       </div>
       
       <div class="shop-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1054.235968993282!2d-114.08842601907592!3d51.063984242221586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716f9268a69e81%3A0xb1db5e68bd61e28!2z5Y2X6Zi_5bCU5Lyv5aGU55CG5bel5a2m6Zmi!5e0!3m2!1szh-CN!2sca!4v1711137550032!5m2!1szh-CN!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1054.235968993282!2d-114.08842601907592!3d51.063984242221586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716f9268a69e81%3A0xb1db5e68bd61e28!2z5Y2X6Zi_5bCU5Lyv5aGU55CG5bel5a2m6Zmi!5e0!3m2!1szh-CN!2sca!4v1711137550032!5m2!1szh-CN!2sca" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
 </section>

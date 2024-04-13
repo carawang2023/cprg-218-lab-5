@@ -13,99 +13,55 @@ var acc = document.getElementsByClassName("accordion");
       });
     }
 
-/**
- * Create one card from item data.
- */
-function createCardElement(item) {
-  return `
-      <li class="card">
-          <img src=${item.image} alt="">
-          <div class="card-content">
-              <p class="subheader">
-                  ${item.subtitle}
-              </p>
-              <h3 class="header">
-                  ${item.title}
-              </h3>
-          </div>
-      </li>
-    `;
+function searchPhotos() {
+  const query = document.getElementById('searchInput').value;
+  
+  fetch(`https://api.pexels.com/v1/search?query=nailart&orientation=landscape&per_page=12&page=1`, {
+    headers: {
+      Authorization: 'Ysh4i5movZoJ05bGj3pEDasrIcKUgt9zY0PuCnxu1sxJOfeNxNO4OHP5'
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      displayPhotos(data.photos);
+    })
+    .catch(error => console.error('Error searching photos:', error));
 }
 
-/**
- * Fetch list of pokemon names and urls.
- */
-async function fetch10PokemonList() {
-  try {
-    // Get a list of Pokemon numbered 0-10
-    const response = await fetch(
-      "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10"
-    );
-    const data = await response.json();
-    return data.results;
-    //Error handling
-  } catch (error) {
-    console.log(error);
-  }
-}
+function displayPhotos(photos) {
+  const cardsContainer = document.getElementById('cardsContainer');
+  cardsContainer.innerHTML = '';
 
-/**
- * Fetch details of a pokemon.
- */
-async function fetchPokemonDetails(url) {
-  try {
-    const response = await fetch(url);
-    const json = await response.json();
-    return json;
-    //Error handling
-  } catch (error) {
-    console.log(error);
-  }
-}
+  photos.forEach(photo => {
+    const card = document.createElement('div');
+    card.classList.add('card');
 
-/**
- * Option 1
- */
-function renderOption1Results(data) {
-  const card = createCardElement({
-    title: data.name,
-    subtitle: data.types.map((type) => type.type.name).join(", "),
-    image: data.sprites.other["official-artwork"].front_default,
+    const image = document.createElement('img');
+    image.src = photo.src.medium;
+    image.alt = photo.alt_description;
+    card.appendChild(image);
+
+    const caption = document.createElement('p');
+    caption.textContent = `Nail Art (${photo.id})`;
+    card.appendChild(caption);
+
+    cardsContainer.appendChild(card);
   });
-  document.getElementById("option-1-results").innerHTML = card;
 }
 
-async function option1DropdownClickHandler(event) {
-  const select = document.getElementById("dropdown");
-  const url = select.options[select.selectedIndex].value;
-  const data = await fetchPokemonDetails(url);
-  if (data) {
-    renderOption1Results(data);
+document.getElementById('searchInput').addEventListener('input', function(event) {
+  const searchTerm = event.target.value.toLowerCase();
+  const cards = document.getElementsByClassName('card');
+
+  for (let card of cards) {
+    const caption = card.getElementsByTagName('p')[0].textContent.toLowerCase();
+    if (caption.includes(searchTerm)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
   }
-}
+});
 
-/**
- * Attach an event listener to the submit button for the Option 1 dropdown list.
- */
-const option1SubmitButton = document.getElementById("submit-button");
-option1SubmitButton.addEventListener("click", option1DropdownClickHandler);
-
-/**
- * Populate the dropdown list with pokemon names and their endpoint urls.
- */
-async function renderOption1Dropdown() {
-  const select = document.getElementById("dropdown");
-  const list = await fetch10PokemonList();
-  if (list) {
-    list.forEach((item) => {
-      const option = document.createElement("option");
-      option.textContent = item.name;
-      option.value = item.url;
-      select.appendChild(option);
-    });
-  }
-}
-
-renderOption1Dropdown();
-
-
+// Initial call to fetch photos when the page loads
+searchPhotos();

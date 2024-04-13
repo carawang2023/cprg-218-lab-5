@@ -45,7 +45,7 @@ img {
 }
 
 .accordion {
-  background-color: #fc0;;
+  background-color: #fc0;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -93,16 +93,29 @@ img {
   gap: 1.5rem;
 }
 
-.card {
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0rem 0.125rem 1.5rem rgb(0 0 0 / 12%);
-  max-width: 21.1875rem;
-  flex: 1 0 45%;
+.cards-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.card-content {
-  padding: 1rem;
+.card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card p {
+  padding: 10px;
+  font-size: 14px;
 }
 
 .footer .social a {
@@ -167,13 +180,34 @@ footer {
     font-weight: bold;
   }
 
-  .card {
-    flex: 1 0 30%;
-    max-width: 17.625rem;
+  .cards-container{
+    margin: 2vw;
   }
 
-  img {
-    min-height: 15.5rem;
+  .cards-container h1{
+    margin-top: 8vw;
+    font-size: 22px;
+  }
+
+  .cards-container input{
+    font-size: 14px;
+    padding: 1vw;
+  }
+
+  .cards-container button{
+    background-color: darkseagreen;
+    color: white;
+    border-radius: 10px;
+    padding: 2vw 5vw 2vw 5vw;
+    margin-left: 2vw;
+  }
+  
+  .cards-container button:hover{
+    background-color: #fc0;
+    color: black;
+    border-radius: 10px;
+    padding: 2vw 5vw 2vw 5vw;
+    margin-left: 2vw;
   }
 
   .footer-content {
@@ -252,9 +286,34 @@ footer {
     font-weight: bold;
   }
 
-  .card {
-    flex: 1 0 30%;
-    max-width: 17.625rem;
+  .cards-container{
+    margin: 2.5vw;
+  }
+
+  .cards-container h1{
+    margin-top: 8vw;
+    font-size: 32px;
+  }
+
+  .cards-container input{
+    font-size: 14px;
+    padding: 1vw;
+  }
+
+  .cards-container button{
+    background-color: darkseagreen;
+    color: white;
+    border-radius: 10px;
+    padding: 1vw 3vw 1vw 3vw;
+    margin-left: 1vw;
+  }
+  
+  .cards-container button:hover{
+    background-color: #fc0;
+    color: black;
+    border-radius: 10px;
+    padding: 2vw 5vw 2vw 5vw;
+    margin-left: 2vw;
   }
 
   .footer-content{
@@ -305,7 +364,7 @@ footer {
     position: relative;
     width: 100%;
     height: 100%;
-    padding-right: 5vw;
+    padding-left: 5vw;
   }
 }
 
@@ -351,8 +410,35 @@ footer {
     font-weight: bold;
   }
 
-  .card {
-    flex: 1 0 20%;
+  .cards-container{
+    margin: 2.5vw;
+  }
+
+  .cards-container input{
+    font-size: 16px;
+    padding: 0.5vw;
+  }
+
+  .cards-container h1{
+    margin-top: 8vw;
+    font-size: 32px;
+  }
+
+  .cards-container button{
+    background-color: darkseagreen;
+    color: white;
+    border-radius: 15px;
+    padding: 0.7vw 2vw 0.7vw 2vw;
+    margin-left: 1vw;
+    font-size: 16px;
+  }
+  
+  .cards-container button:hover{
+    background-color: #fc0;
+    color: black;
+    border-radius: 10px;
+    padding: 2vw 5vw 2vw 5vw;
+    margin-left: 2vw;
   }
 
   .footer-content{
@@ -396,9 +482,10 @@ footer {
 
   .shop-map {
     position: relative;
-    padding-left: 5vw;
+    margin-right: 5vw;
     padding-bottom: 75%;
-    height: 0;
+    width: 500px;
+    height: 50px;
     overflow: hidden;
   }
 
